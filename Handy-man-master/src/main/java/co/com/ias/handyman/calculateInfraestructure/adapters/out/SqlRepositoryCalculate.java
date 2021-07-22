@@ -27,10 +27,11 @@ public class SqlRepositoryCalculate implements CalculationRepository {
     }
 
     @Override
-    public Collection<CalculateDates> getReportById(TechnicalIdentification technicalIdentification) {
-        final String sql ="SELECT * FROM servicereport WHERE TECHNICALID= ?";
+    public Collection<CalculateDates> getReportById(TechnicalIdentification technicalIdentification, ServiceIdentification anio) {
+        final String sql ="SELECT * FROM servicereport WHERE TECHNICALID= ? AND STARTDATE >= CAST( ? AS datetime)";
         PreparedStatementSetter preparedStatementSetter=ps ->{
             ps.setString(1,technicalIdentification.getTechnicalId());
+            ps.setString(2,anio.getServiceId());
         };
 
         return jdbcTemplate.query(sql,preparedStatementSetter,reportRowMapper);
@@ -38,7 +39,6 @@ public class SqlRepositoryCalculate implements CalculationRepository {
 
     private static CalculateDates fromResultSet (ResultSet rs) throws SQLException {
         return new CalculateDates(
-
                 new NonEmptyStartDate(rs.getString("startDate")),
                 new NonEmptyFinishDate(rs.getString("finishDate"))
 

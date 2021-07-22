@@ -1,8 +1,4 @@
 package co.com.ias.handyman.calculateInfraestructure.adapters.in;
-
-import co.com.ias.handyman.applicationServiceReport.domain.ServiceReport;
-import co.com.ias.handyman.applicationServiceReport.domain.TechnicalIdentification;
-import co.com.ias.handyman.calculateApplication.domain.CalculateDates;
 import co.com.ias.handyman.calculateApplication.model.Calculate;
 import co.com.ias.handyman.calculateApplication.model.CreateCalculationRequest;
 import co.com.ias.handyman.calculateApplication.ports.in.CreateCalculationUseCase;
@@ -11,9 +7,6 @@ import co.com.ias.handyman.infraestructureServiceReport.commons.UseCaseHttpExecu
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
-
-import java.util.Collection;
-
 
 @Controller
 @RequestMapping (path = "/Calculate")
@@ -37,8 +30,7 @@ public class CalculationController {
     @PostMapping ("/fechas/{fechas}")
     @ResponseBody
     public Object[] recibirFechas(@PathVariable Object[] fechas){
-        Calculate calculate = new Calculate();
-        return calculate.calcularHoras(fechas);
+       return Calculate.calcularHoras(fechas);
     }
 
 
