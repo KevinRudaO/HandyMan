@@ -1,6 +1,7 @@
 package co.com.ias.handyman.calculateApplication.service;
 
 import co.com.ias.handyman.applicationServiceReport.commons.NonEmptyString;
+import co.com.ias.handyman.applicationServiceReport.domain.ServiceIdentification;
 import co.com.ias.handyman.applicationServiceReport.domain.ServiceReport;
 import co.com.ias.handyman.applicationServiceReport.domain.TechnicalIdentification;
 import co.com.ias.handyman.calculateApplication.domain.CalculateDates;
@@ -21,7 +22,8 @@ public class CalculationService implements CreateCalculationUseCase {
 
     @Override
     public CreateCalculationResponse execute(CreateCalculationRequest request) {
-        Collection<CalculateDates>calculate = repository.getReportById(new TechnicalIdentification(request.getTechId()));
+        Collection<CalculateDates>calculate = repository.getReportById(new TechnicalIdentification(request.getTechId()),
+                new ServiceIdentification(request.getAnio()));
 
         return new CreateCalculationResponse(calculate);
     }

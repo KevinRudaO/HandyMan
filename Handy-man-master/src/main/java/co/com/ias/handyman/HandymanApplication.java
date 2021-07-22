@@ -1,8 +1,11 @@
 package co.com.ias.handyman;
 
+import co.com.ias.handyman.applicationServiceReport.model.CreateServiceReportRequest;
 import co.com.ias.handyman.calculateApplication.model.Calculate;
+import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.context.annotation.Bean;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -13,7 +16,16 @@ public class HandymanApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(HandymanApplication.class, args);
 
-		Calculate calculate = new Calculate();
+	}
+	/*
+	@Bean
+	public CommandLineRunner lombokTest(){
+		return args->{
+			CreateServiceReportRequest createServiceReportRequest = new CreateServiceReportRequest();
+			createServiceReportRequest.setServiceIdentification("123");
+			System.out.println(createServiceReportRequest);
+		};
+	}*/
 
 	/*	Object[] list = new Object[3];
 		list[0]="2021-W27";
@@ -25,10 +37,12 @@ public class HandymanApplication {
 		}
 		calculate.calcularHoras(list);
 */
+
+
+
+
+
+
 	}
-
-
-
-}
 
 

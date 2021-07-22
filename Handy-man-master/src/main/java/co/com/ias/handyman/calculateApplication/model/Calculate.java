@@ -7,7 +7,7 @@ import java.time.format.DateTimeFormatter;
 import java.util.Calendar;
 
 public class Calculate {
-    public Object[] calcularHoras(Object[] fechas) {
+    public static Object[] calcularHoras(Object[] fechas) {
         int normales=0, nocturnas=0, dominicales=0, normalesExtra=0, nocturnasExtra=0, dominicalesExtra=0, horasTotales=0;
         int minNor=0, minNoc=0, minDom=0, minNorEx=0, minNocEx=0, minDomEx=0;
         Object[] horas = new Object[6];
