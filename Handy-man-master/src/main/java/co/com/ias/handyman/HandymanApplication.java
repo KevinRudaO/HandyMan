@@ -17,30 +17,6 @@ public class HandymanApplication {
 		SpringApplication.run(HandymanApplication.class, args);
 
 	}
-	/*
-	@Bean
-	public CommandLineRunner lombokTest(){
-		return args->{
-			CreateServiceReportRequest createServiceReportRequest = new CreateServiceReportRequest();
-			createServiceReportRequest.setServiceIdentification("123");
-			System.out.println(createServiceReportRequest);
-		};
-	}*/
-
-	/*	Object[] list = new Object[3];
-		list[0]="2021-W27";
-		list[1]="2021-07-06T21:00";
-		list[2]="2021-07-09T22:30";
-
-		for (int i=0;i<list.length;i++){
-			System.out.println(list[i]);
-		}
-		calculate.calcularHoras(list);
-*/
-
-
-
-
 
 
 	}

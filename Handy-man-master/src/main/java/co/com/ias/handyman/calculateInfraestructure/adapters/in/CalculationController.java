@@ -30,7 +30,8 @@ public class CalculationController {
     @PostMapping ("/fechas/{fechas}")
     @ResponseBody
     public Object[] recibirFechas(@PathVariable Object[] fechas){
-       return Calculate.calcularHoras(fechas);
+     Calculate calcularHoras = new Calculate();
+       return calcularHoras.calcularHoras(fechas);
     }
 
 
