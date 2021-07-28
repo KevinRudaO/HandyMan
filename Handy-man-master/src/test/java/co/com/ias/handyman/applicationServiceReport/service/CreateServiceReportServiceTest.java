@@ -28,7 +28,7 @@ class CreateServiceReportServiceTest {
         assertAll(
                 ()-> assertDoesNotThrow(()-> createServiceReportService.execute(createServiceReportRequest)),
                 ()->assertEquals(
-                        createServiceReportRequest.getServiceIdentification(),
+                        createServiceReportRequest.getTechnicalIdentification(),
                         techId)
         );
     }

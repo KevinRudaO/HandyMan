@@ -20,7 +20,6 @@ public class ServiceReportController {
     }
 @PostMapping
     public ResponseEntity createReportHandler(@RequestBody CreateServiceReportRequest request){
-    System.out.println(request);
         return httpExecutor.executeUseCase(createServiceReportUseCase,request);
     }
 }

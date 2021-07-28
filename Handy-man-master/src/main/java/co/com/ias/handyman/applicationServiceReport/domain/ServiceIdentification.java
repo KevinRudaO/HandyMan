@@ -2,9 +2,10 @@ package co.com.ias.handyman.applicationServiceReport.domain;
 
 import co.com.ias.handyman.applicationServiceReport.commons.StringUtils;
 import co.com.ias.handyman.applicationServiceReport.commons.Validate;
+import lombok.Data;
 
 import java.util.Objects;
-
+@Data
 public class ServiceIdentification {
     private final String serviceId;
 
@@ -14,9 +15,6 @@ public class ServiceIdentification {
         this.serviceId = serviceId;
     }
 
-    public String getServiceId() {
-        return serviceId;
-    }
 
     @Override
     public boolean equals(Object o) {
